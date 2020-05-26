@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Keluar - Hotspot ku</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styleku.css" rel="stylesheet">
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <script language="JavaScript">
+        <!--
+            function openLogin() {
+            if (window.name != 'hotspot_logout') return true;
+            open('$(link-login)', '_blank', '');
+            window.close();
+            return false;
+            }
+        //-->
+    </script>
+    <div class="container-fluid">
+      <div class="container">
+          <div class="row"><!--Row1-->
+
+            <div class="col-md-6 col-md-offset-3 bgw"><!--colom 1-->
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="col-sm-12">
+                    <br>
+                      <div class="text-center"> <!--logo -->
+                          <img src="img/logo.png" width="200" class="logostatus">
+                      </div><!--end logo -->
+                    <br>
+                      <div class="alert alert-danger" role="alert">Kamu baru saja <b>Logout</b></div>
+                    
+                    <!--Isi Konten-->
+                        <table class="table table-striped tbfont table-responsive">
+                            <th colspan="2">Info</th>
+                            <th colspan="2">Details</th>
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-user iconL"></span></td>
+                              <td>Username</td>
+                              <td>:</td>
+                              <td>$(username)</td>
+                            </tr>
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-tags iconL"></td>
+                              <td>Alamat Ip</td>
+                              <td>:</td>
+                              <td>$(ip)</td>
+                            </tr>
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-apple iconL"></td>
+                              <td>Alamat MAC</td>
+                              <td>:</td>
+                              <td>$(mac)</td>
+                            </tr>
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-info-sign iconL"></td>
+                              <td>Waktu Login</td>
+                              <td>:</td>
+                              <td>$(uptime)</td>
+                            </tr>
+                            $(if session-time-left)
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-time iconL"></td>
+                              <td>Sisa Waktu</td>
+                              <td>:</td>
+                              <td>$(session-time-left)</td>
+                            </tr>
+                            $(endif)
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-cloud-download iconL"></td>
+                              <td>Upload/Download</td>
+                              <td>:</td>
+                              <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+                            </tr>
+                        </table>
+                    <!--End Isi Konten-->
+                    <p class="text-primary">Untuk melanjutkan, klik tombol dibawah dan Login ulang.</p>
+                    <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                        <button type="submit" class="form-control btn btn-info"><span class="glyphicon glyphicon-repeat"> MASUK</button>
+                    </form>    
+                    <br> 
+                        <div class="text-center">
+                            <i class="copyr">copyright &copy; 2020 Inforsa</i>
+                        </div> <br>
+                  </div>
+                </div>
+              </div>  
+            </div><!--end colom 1-->
+
+            
+
+          </div><!--end Row1-->
+      </div>
+    </div>
+  </body>
+</html>

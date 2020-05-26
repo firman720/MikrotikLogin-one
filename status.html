@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Status - Hotspot ku</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styleku.css" rel="stylesheet">
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <script language="JavaScript">
+    <!--
+    $(if advert-pending == 'yes')
+        var popup = '';
+        function focusAdvert() {
+        if (window.focus) popup.focus();
+        }
+        function openAdvert() {
+        popup = open('$(link-advert)', 'hotspot_advert', '');
+        setTimeout("focusAdvert()", 1000);
+        }
+    $(endif)
+        function openLogout() {
+        if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+        window.close();
+        return false;
+        }
+    //-->
+ </script>
+  <body $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif) >
+    <div class="container-fluid">
+      <div class="container">
+          <div class="row"><!--Row1-->
+
+            <div class="col-md-6 col-md-offset-3 bgw"><!--colom 1-->
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="col-sm-12">
+                    <br>
+                      <div class="text-center"> <!--logo -->
+                          <img src="img/logo.png" width="200" class="logostatus">
+                      </div><!--end logo -->
+                    <br>
+                    $(if login-by == 'trial')
+                      <div class="alert alert-warning" role="alert">
+                       Kamu sedang menggunakan Trial / Demo Internet, hubungi admin untuk lebih lanjut.
+                      </div>
+                    $(elif login-by != 'mac')
+                      <div class="alert alert-success" role="alert">
+                      Selamat datang $(username)!, enjoy...
+                      </div>
+                    $(endif)
+                    <!--Isi Konten-->
+                        <table class="table table-striped tbfont table-responsive">
+                            <th colspan="2">My Username</th>
+                            <th colspan="2">Details</th>
+                          
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-tags iconL"></td>
+                              <td>Alamat Ip</td>
+                              <td>:</td>
+                              <td>$(ip)</td>
+                            </tr>
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-cloud-download iconL"></td>
+                              <td>Upload/Download</td>
+                              <td>:</td>
+                              <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+                            </tr>
+                            $(if session-time-left)
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-info-sign iconL"></td>
+                              <td>Waktu Login</td>
+                              <td>:</td>
+                              <td>$(uptime)</td>
+                            </tr>
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-time iconL"></td>
+                              <td>Sisa Waktu</td>
+                              <td>:</td>
+                              <td>$(session-time-left)</td>
+                            </tr>
+                            $(else)   
+                            <tr>
+                              <td width="20"><img src="img/wifi-alt.png" class="iconLW"></td>
+                              <td>Terkoneksi</td>
+                              <td>:</td>
+                              <td>$(uptime)</td>
+                            </tr>
+                            $(endif) 
+
+                            $(if blocked == 'yes')
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-ok iconL"></td>
+                              <td>Status</td>
+                              <td>:</td>
+                              <td>$(uptime)</td>
+                            </tr>
+                            $(elif refresh-timeout)
+                            <tr>
+                              <td width="20"><span class="glyphicon glyphicon-refresh iconL"></td>
+                              <td>Refresh</td>
+                              <td>:</td>
+                              <td>$(refresh-timeout)</td>
+                            </tr>
+                            $(endif)
+                        </table>
+                    <!--End Isi Konten-->
+                    <div class="text-center info">
+                    $(if login-by-mac != 'yes')
+                    <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+                    <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+                    end of user manager link -->
+                    $(endif)
+                    </div><br>
+                    <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                       <button type="submit" class="form-control btn btn-danger"><span class="glyphicon glyphicon-log-out"> KELUAR</button>
+                    <br> <br>
+                    </form>
+                        <div class="text-center">
+                            <i class="copyr">copyright &copy; 2020 Inforsa</i>
+                        </div> <br>
+                  </div>
+                </div>
+              </div>  
+            </div><!--end colom 1-->
+
+            
+
+          </div><!--end Row1-->
+      </div>
+    </div>
+  </body>
+</html>

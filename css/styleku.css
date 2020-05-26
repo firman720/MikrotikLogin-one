@@ -1,0 +1,85 @@
+body{
+	/*
+	ccs kode untuk merubah background page keseluruhan.
+	*/
+	background: #ff8400;
+}
+
+.bgw{
+	background: ;
+	margin-top: 8%;
+	padding: 8px;
+}
+
+.wth{color:#FFF;}
+.logohome{margin-top: 20px; margin-bottom: -80px;}
+.tbfont td{ font-size: 12px;}
+.iconL{ font-size: 20px;}
+.iconLW{width:25px;}
+.logodiv{margin-top: 40px; margin-bottom: -90px; border:1px solid #000; height: 40px;}
+
+
+/*
+	kode dibawah ini merupakan kode
+	untuk membuat elemen mengikuti lebar
+	halaman / responsif
+
+	Atur nilai nya dan sesuakan dengan layar
+*/
+/*11inc*/
+@media only screen and (max-width: 1056px) {
+	.logohome{width:25%; margin-bottom: -55px;}
+}
+
+/*10inc*/
+@media only screen and (max-width: 960px) {
+	.logohome{width:30%; margin-bottom: -55px;}
+}
+
+/*9inc*/
+@media only screen and (max-width: 864px) {
+	.logohome{width:35%; margin-bottom: -50px;}
+}
+
+/*8inc*/
+@media only screen and (max-width: 768px) {
+	.logohome{width:40%; margin-bottom: -40px;}
+}
+
+/*7inc*/
+@media only screen and (max-width: 672px) {
+	.logohome{width:40%; margin-bottom: -30px;}
+}
+
+/*6inc*/
+@media only screen and (max-width: 576px) {
+	.logohome{width:40%; margin-bottom: -12px;}
+}
+
+/*5inc*/
+@media only screen and (max-width: 480px) {
+
+	.tbfont td{
+		font-size: 9px;	
+	}
+	.iconL{ font-size: 10px;}
+	.iconLW{width:10px;}
+	.logohome{width:50%; margin-bottom: -8px;}
+}
+
+/*4inc*/
+@media only screen and (max-width: 384px) {
+	.logodiv{margin-top: 10px; margin-bottom: 1px;}
+
+	.tbfont td{
+		font-size: 8px;	
+	}
+	.tbfont th{
+		font-size: 11px;	
+	}
+	.iconL{ font-size: 10px;}
+	.iconLW{width:10px;}
+	.logohome{width:60%; margin-bottom: -8px;}
+	.logostatus{width:70%; margin-bottom: -20px;}
+	.copyr{font-size: 10px;}
+}

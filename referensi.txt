@@ -1,0 +1,10 @@
+Color Code :
+https://htmlcolorcodes.com/
+
+
+Icon html:
+https://getbootstrap.com/docs/3.3/components/#glyphicons
+
+Icon creator :
+https://iconsflow.com/editor
+http://www.xiconeditor.com/
